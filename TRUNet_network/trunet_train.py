@@ -99,7 +99,7 @@ def trainer(args, config, model, savepath):
             # so we need to add the channel dimension
             print("before unsqueeze: inputs: ", inputs.shape, " targets: ", targets.shape)
             inputs, targets = inputs.unsqueeze(1), targets.unsqueeze(1)
-            print("before unsqueeze: inputs: ", inputs.shape, " targets: ", targets.shape)
+            print("after unsqueeze: inputs: ", inputs.shape, " targets: ", targets.shape)
             inputs, targets = inputs.to(device), targets.to(device)
 
             optimizer.zero_grad()
