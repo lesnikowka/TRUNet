@@ -35,6 +35,7 @@ class VisionTransformer3d(nn.Module):
 
     def forward(self, x):
         print("x shape: ", x.shape)
+        print()
         if x.size()[1] == 1:
             x = x.repeat(1, 3, 1, 1, 1)  # turning the image into 3 channels
 
