@@ -97,7 +97,9 @@ def trainer(args, config, model, savepath):
             inputs, targets = sampled_batch['image'], sampled_batch['label']
             # here the input and target have the shape [batch, H, L, D]
             # so we need to add the channel dimension
+            print("before unsqueeze: inputs: ", inputs.shape, " targets: ", targets.shape)
             inputs, targets = inputs.unsqueeze(1), targets.unsqueeze(1)
+            print("before unsqueeze: inputs: ", inputs.shape, " targets: ", targets.shape)
             inputs, targets = inputs.to(device), targets.to(device)
 
             optimizer.zero_grad()
