@@ -66,9 +66,9 @@ def trainer(args, config, model, savepath):
         random.seed(args.seed + worker_id)
 
     # Data Loaders
-    train_loader = DataLoader(dataset_train, batch_size=args.batch_size, shuffle=True, num_workers=16, pin_memory=True,
+    train_loader = DataLoader(dataset_train, batch_size=args.batch_size, shuffle=True, num_workers=1, pin_memory=True,
                               worker_init_fn=worker_init_fn)
-    val_loader = DataLoader(dataset_val, batch_size=1, shuffle=True, num_workers=2, pin_memory=True,
+    val_loader = DataLoader(dataset_val, batch_size=1, shuffle=True, num_workers=1, pin_memory=True,
                             worker_init_fn=worker_init_fn)
 
     max_iterations = args.max_epochs * len(train_loader)
