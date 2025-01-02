@@ -163,6 +163,7 @@ class ResNetV23d(nn.Module):
         ]))
 
     def forward(self, x):
+        print("resnet shape", s.size())
         features = []
         b, c, in_size, _, _ = x.size()
         
